@@ -1,0 +1,10 @@
+{
+  "policies": {
+    "Certificates": {
+      "ImportEnterpriseRoots": true,
+      "Install": [
+        "/home/blakecash/Desktop/certfolder/rootCA.crt"
+      ]
+    }
+  }
+}
