@@ -1,0 +1,27 @@
+Download the openssl Tar.gz
+decompress with $ tar xvzf file.tar.gz
+./config
+make
+make test
+make install
+
+generate .key
+generate .pem
+convert .pem to .crt
+
+Take all those steps, import the root certificate via policy
+https://wiki.mozilla.org/CA/AddRootToFirefox
+Show our certificate
+Show the certificates list for firefox
+
+update policies.json using this addon
+show policies.json
+Convert from .pem to .crt using openssl x509 -outform der -in your-cert.pem -out your-cert.crt
+
+Host some node.js on localhost
+Show node.js
+
+Run this node.js on localhost. Create a .cert and a .key using these rules, attatched to node.js
+https://medium.freecodecamp.org/how-to-get-https-working-on-your-local-development-environment-in-5-minutes-7af615770eec
+
+To get this inserted onto another machine, you would obviously not use the localhost, but you would simply modify any part of it that says localhost to whatever your host is, and then find some way to get your .crt accepted by their browser. For instance, you could perform a scam in order to trick someone into modifying their policies, or write a script to do so (for firefox)
