@@ -25,3 +25,30 @@ Run this node.js on localhost. Create a .cert and a .key using these rules, atta
 https://medium.freecodecamp.org/how-to-get-https-working-on-your-local-development-environment-in-5-minutes-7af615770eec
 
 To get this inserted onto another machine, you would obviously not use the localhost, but you would simply modify any part of it that says localhost to whatever your host is, and then find some way to get your .crt accepted by their browser. For instance, you could perform a scam in order to trick someone into modifying their policies, or write a script to do so (for firefox)
+
+Finally there's that hard part, getting the certificate to fire as valid on someone else's machine
+
+The good news: Even if this wasn't on localhost, our certificate would appear whenever someone visited our website if we attatch it like this
+
+The bad news: It wouldn't be considered valid by any browser. As we saw before, browsers keep a comprehensive list of all the .crt's they think are cool, and only give the fancy green 'safe' lock to websites on that list. That means, in order to be seen as a valid certificate even after we embed it like this, we have to find a way to manipulate the preferences .json of a target user in the same way we update the preferences.json of our own firefox browser (on different browsers/operating systems this would work differently.) Two ways this could happen are by either installing a malicious script, or running a scam that might convince users to add the .crt to the list of approved .crt's themselves
+
+
+Heres a list of nearly (Every) website i used for reference, in case we need to cite sources:
+https://unix.stackexchange.com/questions/288517/how-to-make-self-signed-certificate-for-localhost
+http://www.onlinesmartketer.com/2009/06/23/curl-adding-installing-trusting-new-self-signed-certificate/
+https://jamielinux.com/docs/openssl-certificate-authority/introduction.html
+https://datacenteroverlords.com/2012/03/01/creating-your-own-ssl-certificate-authority/
+https://gist.github.com/kyledrake/d7457a46a03d7408da31
+https://askubuntu.com/questions/652188/copying-a-file-from-documents-folder-to-home-folder-using-cp-command
+https://support.mozilla.org/en-US/kb/customizing-firefox-using-policiesjson
+https://serverfault.com/questions/9708/what-is-a-pem-file-and-how-does-it-differ-from-other-openssl-generated-key-file
+https://stackoverflow.com/questions/38497334/how-to-run-html-file-on-localhost
+https://medium.freecodecamp.org/how-to-get-https-working-on-your-local-development-environment-in-5-minutes-7af615770eec
+https://datacenteroverlords.com/2012/03/01/creating-your-own-ssl-certificate-authority/
+https://wiki.mozilla.org/CA/AddRootToFirefox
+https://kb.wisc.edu/page.php?id=4064
+https://expressjs.com/en/starter/installing.html
+https://stackoverflow.com/questions/16827987/expressjs-throw-er-unhandled-error-event
+https://www.poweradmin.com/help/sslhints/firefox.aspx
+https://nodejs.org/api/http.html#http_http_createserver_options_requestlistener
+https://expressjs.com/en/starter/hello-world.html
